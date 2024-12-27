@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyICloud</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container main-container">
+        <header class="text-center">
+            <div class="menu">
+                <div class="left-menu">
+                    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo">
+                    <h1 class="title">EasyICloud</h1>
+                </div>
+                <div class="right-menu">
+                    <div class="item" id="index"><a href="/">🏠 EasyICloud</a></div>
+                    <div class="item" id="manuel"><a href="manual">📘 Comment ça marche ?</a></div>
+                    <div class="item" id="plan"><a href="plan">🗺️ Plan du site</a></div>
+                    <div class="item" id="contact"><a href="contact">📞 Contact</a></div>
+                </div>
+            </div>
+        </header>
+        <div class="subtitle-area">
+            <p class="tagline">« ICloud sur Windows c'est pas pratique ? Plus maintenant avec EasyICloud ! » </p>
+            <h2 class="subtitle">Par FLKprod</h2>
+        </div>
+        <div class="presentation-container plan">
+            
+            <h1>Bienvenue sur EasyICloud</h1>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo EasyICloud" class="logo">
+            <p>
+                Découvrez **EasyICloud**, l'outil parfait pour simplifier la gestion de vos fichiers ZIP. 
+                Que vous soyez un professionnel ou un utilisateur occasionnel, EasyICloud rend la fusion, 
+                l'extraction et l'organisation de vos fichiers compressés rapides et faciles.
+            </p>
+            <p>
+                <strong>Pourquoi choisir EasyICloud ?</strong><br>
+                - Facilité d’utilisation<br>
+                - Gain de temps<br>
+                - Personnalisation<br>
+                - Sécurité locale
+            </p>
+            <p>
+                Avec EasyICloud, gagnez en productivité et concentrez-vous sur l'essentiel !
+            </p>
+            <div class="cta">
+                <a href="/">Essayez EasyICloud</a>
+            </div>
+            
+        </div>
+        <!-- Pied de page -->
+        <footer class="footer text-center mt-5">
+            <p style="font-weight: bold;">EasyICloud par FLKprod</p>
+            <nav>
+                <a href="/" id="index" class="menu-item">🏠 EasyICloud</a>
+                <span>|</span>
+                <a href="manual" id="manual" class="menu-item">📘 Comment ça marche ?</a>
+                <span>|</span>
+                <a href="plan" id="plan"class="menu-item">🗺️ Plan du site</a>
+                <span>|</span>
+                <a href="contact" id="contact" class="menu-item">📞 Contact</a>
+            </nav>
+            <p>&copy; 2023 FLKprod. Tous droits réservés.</p>
+        </footer>
+    </div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</body>
+</html>
+

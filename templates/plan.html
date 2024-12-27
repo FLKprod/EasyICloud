@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyICloud</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container main-container">
+        <header class="text-center">
+            <div class="menu">
+                <div class="left-menu">
+                    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo">
+                    <h1 class="title">EasyICloud</h1>
+                </div>
+                <div class="right-menu">
+                    <div class="item" id="index"><a href="/">🏠 EasyICloud</a></div>
+                    <div class="item" id="manuel"><a href="manual">📘 Comment ça marche ?</a></div>
+                    <div class="item" id="plan"><a href="plan">🗺️ Plan du site</a></div>
+                    <div class="item" id="contact"><a href="contact">📞 Contact</a></div>
+                </div>
+            </div>
+        </header>
+        <div class="subtitle-area">
+            <p class="tagline">« ICloud sur Windows c'est pas pratique ? Plus maintenant avec EasyICloud ! » </p>
+            <h2 class="subtitle">Par FLKprod</h2>
+        </div>
+        <div class="container plan"
+        <!-- Formulaire principal en deux colonnes -->
+        <h1>Plan du site</h1>
+        <p>{{ content }}</p>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/manuel">Manuel</a></li>
+            <li><a href="/plan">Plan du site</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>\</div>
+        <!-- Pied de page -->
+        <footer class="footer text-center mt-5">
+            <p style="font-weight: bold;">EasyICloud par FLKprod</p>
+            <nav>
+                <a href="/" id="index" class="menu-item">🏠 EasyICloud</a>
+                <span>|</span>
+                <a href="manual" id="manual" class="menu-item">📘 Comment ça marche ?</a>
+                <span>|</span>
+                <a href="plan" id="plan"class="menu-item">🗺️ Plan du site</a>
+                <span>|</span>
+                <a href="contact" id="contact" class="menu-item">📞 Contact</a>
+            </nav>
+            <p>&copy; 2023 FLKprod. Tous droits réservés.</p>
+        </footer>
+    </div>
+</body>
+</html>
+

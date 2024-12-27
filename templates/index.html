@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyICloud</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container main-container">
+        <header class="text-center">
+            <div class="menu">
+                <div class="left-menu">
+                    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo">
+                    <h1 class="title">EasyICloud</h1>
+                </div>
+                <div class="right-menu">
+                    <div class="item" id="index"><a href="">🏠 EasyICloud</a></div>
+                    <div class="item" id="manuel"><a href="manual">📘 Comment ça marche ?</a></div>
+                    <div class="item" id="plan"><a href="plan">🗺️ Plan du site</a></div>
+                    <div class="item" id="contact"><a href="contact">📞 Contact</a></div>
+                </div>
+            </div>
+        </header>
+        <div class="subtitle-area">
+            <p class="tagline">« ICloud sur Windows c'est pas pratique ? Plus maintenant avec EasyICloud ! » </p>
+            <h2 class="subtitle">Par FLKprod</h2>
+        </div>
+        <!-- Formulaire principal en deux colonnes -->
+        <form id="fusionne-zip" action="{{ url_for('merge') }}" method="post" enctype="multipart/form-data">
+            <div class="form-container row">
+                <div class="square" id="select-files files" onclick="document.getElementById('files').click()">
+                    <img src="{{ url_for('static', filename='1.png') }}" class="logo" >
+                    <div class="center-square">
+                        <label for="files" class="btn-upload">📁 Sélectionnez des fichiers ZIP 📁</label>
+                    </div>
+                    <input style="display: none;" id="files" type="file" name="files"  class="form-control-file" multiple required>
+                </div>
+            
+                <div class="square" id="file-list">
+                    <img src="{{ url_for('static', filename='2.png') }}" class="logo">
+                    <label for="file_list">📋 Vérifiez votre Liste de fichiers 📋</label>
+                    <div id="file-itemlist" class="file-list">
+                         <!-- liste des fichiers zip -->
+                    </div>
+                    <button type="button" id="clear_selection" class="btn btn-danger text-white">Vider toute la sélection</button>
+                </div>
+            
+                <div class="square" id="options">
+                    <img src="{{ url_for('static', filename='3.png') }}" class="logo" >
+                    <label>⚙️ Gérez les Options facultatives ⚙️</label>
+                    <div class="form-check">
+                        <div class="folder-name">
+                            <input class="form-check-input" type="checkbox" id="enable_folder_name" onchange="toggleFolderName()">
+                            <label for="enable_folder_name">Créer un nouveau dossier</label>
+                            <input type="text" id="folder_name" class="form-control" placeholder="Entrez le nom du dossier ici" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="use_custom_path" onchange="toggleCustomPath()">
+                        <label for="use_custom_path">Utiliser un chemin personnalisé</label>
+                        <input type="text" id="custom_path" class="form-control" placeholder="Chemin d'enregistrement" style="display: none;">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="include_zip_files" name="include_zip_files">
+                        <label class="form-check-label" for="include_zip_files">Inclure les fichiers ZIP dans le dossier final</label>
+                    </div>
+                </div>
+            
+                <div class="square" id="submit" onclick="submitFiles()">
+                    <img src="{{ url_for('static', filename='4.png') }}" class="logo">
+                    <div class="center-square">
+                        <label class="btn-upload">🚀 Fusionner les fichiers ZIP 🚀</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <!-- Pied de page -->
+        <footer class="footer text-center mt-5">
+            <p style="font-weight: bold;">EasyICloud par FLKprod</p>
+            <nav>
+                <a href="/" id="index" class="menu-item">🏠 EasyICloud</a>
+                <span>|</span>
+                <a href="manual" id="manual" class="menu-item">📘 Comment ça marche ?</a>
+                <span>|</span>
+                <a href="plan" id="plan"class="menu-item">🗺️ Plan du site</a>
+                <span>|</span>
+                <a href="contact" id="contact" class="menu-item">📞 Contact</a>
+            </nav>
+            <p>&copy; 2023 FLKprod. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <!-- Inclure le fichier JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
